@@ -6,7 +6,7 @@
 
 -🛠 Tecnologias utilizadas :
 
-<--ts-->
+
 *[Golang]
 *[Docker]
 *[Nest.js]
@@ -15,6 +15,6 @@
 *[Kubernetes]
 *[Prometheus]
 *[Grafana]
-<--te-->
+
 </p>
 
