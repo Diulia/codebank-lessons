@@ -26,6 +26,21 @@ func main() {
 	producer := setupKafkaProducer()
 	processTransactionUseCase := setupTransactionUseCase(db, producer)
 	serveGrpc(processTransactionUseCase)
+	cc := domain.NewCreditCard()
+	cc.Number = "2222"
+	cc.Name = "Diulia"
+	cc.ExpirationYear = 2026
+	cc.ExpirationMonth = 10
+	cc.CVV = 987
+	cc.Limit = 1000
+	cc.Balance = 0
+
+	repo := repository.NewTransactionRepositoryDb(db)
+	err := repo.CreateCreditCard(*cc)
+	if err != nil {
+	fmt.Println(err)
+	}
+
 }
 
 func setupTransactionUseCase(db *sql.DB, producer kafka.KafkaProducer) usecase.UseCaseTransaction {
@@ -59,6 +74,24 @@ func setupDb() *sql.DB {
 func serveGrpc(processTransactionUseCase usecase.UseCaseTransaction) {
 	grpcServer := server.NewGRPCServer()
 	grpcServer.ProcessTransactionUseCase = processTransactionUseCase
-	fmt.Println("Rodando gRPC Server")
+	fmt.Println("Tá rodando certo até aqui")
 	grpcServer.Serve()
 }
+
+
+
+
+// cc := domain.NewCreditCard()
+// cc.Number = "2222"
+// cc.Name = "Diulia"
+// cc.ExpirationYear = 2026
+// cc.ExpirationMonth = 10
+// cc.CVV = 987
+// cc.Limit = 1000
+// cc.Balance = 0
+
+// repo := repository.NewTransactionRepositoryDb(db)
+// err := repo.CreateCreditCard(*cc)
+// if err != nil {
+// fmt.Println(err)
+// }
