@@ -1,20 +1,22 @@
 # codebank-lessons
 
-🚧  Em construção...  🚧
+<h1 align="center">Codebank</h1>
 
-<p>
+<p> 🚧  Em construção...  🚧 </p>
 
--🛠 Tecnologias utilizadas :
+<p>Projeto desenvolvido baseado nas aulas e lives do fullcycle</p>
 
 
-*[Golang]
-*[Docker]
-*[Nest.js]
-*[Next.js]
-*[Kafka]
-*[Kubernetes]
-*[Prometheus]
-*[Grafana]
+<h3> 🛠 Tecnologias utilizadas : </h3>
 
-</p>
+<ul>
+    <li>Golang</li>
+    <li>Docker</li>
+    <li>Nest.js</li>
+    <li>Next.js</li>
+    <li>Kafka</li>
+    <li>Kubernetes</li>
+    <li>Prometheus</li>
+    <li>Grafana</li>
+</ul>
 
